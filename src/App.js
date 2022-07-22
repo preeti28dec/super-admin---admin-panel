@@ -1,44 +1,71 @@
 import { Routes, Route } from "react-router-dom"
-import Dashboard from "./components/pages/dashboard"
-import AdminDashboard from "./components/admin_panel/AdminDashboard"
-import SuperAdminDashboard from "./components/super_admin_panel/SuperAdminDashboard"
-import Login from "./components/login-signup/login"
-import Signup from "./components/login-signup/signup"
-import UserList from "./components/pages/UserList"
-import PasswordDetil from "./components/super_admin_panel/passwordDetil"
-import UserDetail from "./components/super_admin_panel/userDetail"
+import DashboardPage from "./components/pages/dashboard"
+
 
 function App() {
 
   // const item = localStorage.getItem("userRegister");
   // const parsedItem = JSON.parse(item);
 
-  const isAdmin = false;
-  const authenticated = false;
+  // const isAdmin = false;
+  // const authenticated = false;
 
   return (
     <div className="">
-      <Routes>
-        <Route path="/signup" element={<Signup />} />
-        <Route path="/login" element={<Login />} />
-
-        {authenticated ? <>
-          {isAdmin ? <>
-            <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/user-list" element={<UserList />} />
-
-          </> :
-            <>
-              <Route path="/dashboard" element={<Dashboard />} />
-              <Route path="/user-list" element={<UserList />} />
-              <Route path="/password-detail" element={<PasswordDetil />} />
-              <Route path="/user-detail" element={<UserDetail />} /></>
-          }
-
-        </> : null}
-      </Routes>
+     <DashboardPage />
     </div>
   )
 }
 
 export default App
+
+
+// import { lazy, useState } from 'react';
+// import {
+//   Router,
+// } from 'react-router-dom';
+// import ProtectedRoutes from '../src/routing/protectiveRouting'; //Authenticated routes
+// import PublicRoute from '../src/routing/PublicRoute'; 
+// import PrivateRoute from '../src/routing/privateRouting'; 
+// import Login from '../src/components/login-signup/login';
+
+// const LoginPage = lazy(() => import('../src/components/login-signup/login'));
+// const Register = lazy(() => import('../src/components/login-signup/signup'));
+
+
+// const App = () => {
+//   const [token, setToken] = useState();
+//   if(!token) {
+//     return <Login setToken={setToken} />
+//   }
+
+//   // const LoginValue = JSON.parse(localStorage.getItem("logindata"));
+//   // const isAuthenticated = LoginValue(true);
+//   return (
+
+//         <Router>
+//           <PublicRoute
+//             path="/login"
+//             isAuthenticated={token}
+//           >
+//             <LoginPage />
+//           </PublicRoute>
+
+//           <PublicRoute
+//             path="/register"
+//             isAuthenticated={token}
+//           >
+//             <Register />
+//           </PublicRoute>
+
+//           <PrivateRoute
+//             path="/"
+//             isAuthenticated={token} >
+//             <ProtectedRoutes />
+//           </PrivateRoute>
+       
+//         </Router>
+//   );
+// };
+
+// export default App;

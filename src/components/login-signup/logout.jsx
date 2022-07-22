@@ -4,7 +4,7 @@ import { AiOutlineLogout } from 'react-icons/ai'
 export default function Logout() {
   let navigate = useNavigate();
   function logOut() {
-    navigate("/");
+    navigate("/login");
   }
   return (
     <>

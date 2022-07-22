@@ -45,7 +45,7 @@ function Signup() {
                     <input value={Password} onChange={e => setPassword(e.target.value)} type="password" placeholder="Confirm Password" />
                 </div>
                 <div>
-                    <Link to="/" className='text-blue-400 text-sm ml-2'>Go back to login here </Link>
+                    <Link to="/login" className='text-blue-400 text-sm ml-2'>Go back to login here </Link>
                 </div>
                 <div className="text-center mt-4" >
                     <button className="bg-blue-300 py-2 px-4 rounded" type="button" onClick={onSignup}>SignUp</button>

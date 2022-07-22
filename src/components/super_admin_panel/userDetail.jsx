@@ -2,8 +2,6 @@
 
 import React from 'react'
 
-import Header from '../pages/header'
-import LeftSideBar from '../pages/leftSideBar'
 
 function UserDetail() {
     const item = localStorage.getItem("userRegister");
@@ -12,27 +10,21 @@ function UserDetail() {
 
     return (
 
-        <div className='main'>
-            <Header />
-            <div className='main_container '>
-                <div className='left-side-bar'>
-                    <LeftSideBar />
+
+        <div className='content_section bg-sky-500'>
+            <span>Admin registration Data</span>
+            {parsedItem.map((item) =>
+                <div>
+                    <div>{item.roll}</div>
+                    <div>{item.key}</div>
+                    <div>{item.key}</div>
+                    <div>{item.email}</div>
+                    <div>{item.name}</div>
+                    <div>{item.password}</div>
                 </div>
-                <div className='content_section bg-sky-500'>
-                    <span>Admin registration Data</span>
-                    {parsedItem.map((item) =>
-                        <div>
-                            <div>{item.roll}</div>
-                            <div>{item.key}</div>
-                            <div>{item.key}</div>
-                            <div>{item.email}</div>
-                            <div>{item.name}</div>
-                            <div>{item.password}</div>
-                        </div>
-                    )}
-                </div>
-            </div>
+            )}
         </div>
+
 
     )
 }
